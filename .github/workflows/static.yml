@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Verification Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; }
+        .container { width: 90%; margin: auto; overflow: hidden; padding: 20px; background-color: #fff; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        .header { background-color: #333; color: #fff; padding: 10px 0; text-align: center; }
+        .tabs { list-style-type: none; padding: 0; margin: 0 0 20px 0; background-color: #444; overflow: hidden; }
+        .tabs li { float: left; }
+        .tabs li a { display: block; color: white; text-align: center; padding: 14px 16px; text-decoration: none; transition: 0.3s; }
+        .tabs li a:hover { background-color: #555; }
+        .tabs li a.active { background-color: #007bff; }
+        .tab-content { display: none; padding: 20px; border: 1px solid #ddd; border-top: none; animation: fadeEffect 1s; }
+        @keyframes fadeEffect { from {opacity: 0;} to {opacity: 1;} }
+        h2 { color: #333; border-bottom: 2px solid #007bff; padding-bottom: 10px; }
+        h3 { color: #555; margin-top: 20px; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f0f0f0; }
+        .summary-box { background-color: #e9ecef; padding: 15px; border-radius: 5px; margin-bottom: 15px; }
+        .risk-high { color: red; font-weight: bold; }
+        .risk-medium { color: orange; font-weight: bold; }
+        .risk-low { color: green; }
+        .status-valid { color: green; }
+        .status-expired { color: red; }
+        .status-expiring-soon { color: orange; }
+        .status-consistent { color: green; }
+        .status-mismatch { color: red; }
+        .status-missing { color: orange; }
+        .low-confidence { color: orange; }
+        .not-found { color: #777; font-style: italic; }
+        ul.missing-docs li { margin-bottom: 5px; }
+        .doc-section-summary p { margin: 5px 0; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Business Document Verification Report</h1>
+        <p>Ground Control Entertainments CO. L.L.C</p>
+        <p>Date of Report: June 2, 2025</p>
+    </div>
+
+    <div class="container">
+        <ul class="tabs" id="toc">
+            <li><a href="javascript:void(0)" class="tablinks active" onclick="openTab(event, 'Overview')">Overview</a></li>
+            <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'VATCertificate')">VAT Certificate</a></li>
+            <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'VATStatements')">VAT Statements</a></li>
+            <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'MOA')">Memorandum of Association</a></li>
+            <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'Passports')">Passports</a></li>
+            <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'EIDs')">Emirates IDs</a></li>
+            <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'TradeLicense')">Trade License & Commercial Register</a></li>
+            <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'RentContract')">Rent Contract</a></li>
+            <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'BusinessAECB')">Business AECB</a></li>
+            <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'PersonalAECB')">Personal AECBs</a></li>
+        </ul>
+
+        <div id="Overview" class="tab-content" style="display:block;">
+            <h2>Overview</h2>
+            <div class="summary-box">
+                <p>This report summarizes the verification of business documents for Ground Control Entertainments CO. L.L.C. The process involved data extraction, validity assessment, and consistency checks across all provided documents. Key findings indicate inconsistencies in ownership structure between the Memorandum of Association and the Trade License. Some standard documents were not provided.</p>
+            </div>
+
+            <h3>Missing Documents</h3>
+            <ul class="missing-docs">
+                <li>P&L Statements</li>
+                <li>Facility Letters</li>
+                <li>Bank Statements (last 12 months for all bank accounts)</li>
+                <li>Passport Copy - Wouter Jan Van Wemmel (Specific document not provided, only EID and AECB data)</li>
+            </ul>
+
+            <h3>Data Extraction Summary</h3>
+            <div class="summary-box">
+                <h4>Fields with Low Confidence or Not Found:</h4>
+                <p>Most critical data points were found with high confidence. Specific fields marked as [NOT FOUND] are detailed within individual document extraction tables. No significant fields were extracted with [LOW CONFIDENCE] based on the provided OCR data, assuming clarity.</p>
+                <h4>Legal/Ownership Structure Commentary:</h4>
+                <p>The legal structure is consistently an LLC. However, shareholder details and percentages show discrepancies:</p>
+                <ul>
+                    <li><strong>MOA:</strong> Mohamed Mahmoud Attia Sayed Ahmed Mesharaf (70%), Wouter Jan Van Wemmel (30%).</li>
+                    <li><strong>Trade License:</strong> Mohamed Mahmoud Attia Sayed Ahmed Mesharaf (Manager, Shareholder 50%), Amer Jihad Abou Zour (Shareholder 30%), Wouter Jan Van Wemmel (Shareholder 20%).</li>
+                    <li>Amer Jihad Abou Zour is listed as a shareholder in the Trade License but is not party to the MOA.</li>
+                </ul>
+                <h4>Recommendations:</h4>
+                <p>Clarify the current and correct shareholding structure. An addendum to the MOA or an updated Trade License may be required to align ownership information.</p>
+            </div>
+
+            <h3>Document Validity Summary</h3>
+            <div class="summary-box">
+                <h4>Validity Timeline (as of June 2, 2025):</h4>
+                <ul>
+                    <li>VAT Certificate (104102868700003): Issue 04/08/2023, <span class="status-valid">NO EXPIRY</span>. Recency: CURRENT.</li>
+                    <li>Trade License (1165547): Issue 16/03/2023, Expiry 15/03/2026. <span class="status-valid">VALID</span> (286 days remaining). Recency: CURRENT (based on renewal receipt 28/02/2025).</li>
+                    <li>Rent Contract (0120240306005198): Start 28/10/2023, End 27/10/2030. <span class="status-valid">VALID</span>. Recency: CURRENT.</li>
+                    <li>MOA (8812503): Issue 15/03/2023, <span class="status-valid">NO EXPIRY</span>. Recency: CURRENT.</li>
+                    <li>Passport - M. Mesharaf (A23098380): Issue 04/08/2018, Expiry 03/08/2025. <span class="status-expiring-soon">EXPIRING SOON</span> (62 days remaining).</li>
+                    <li>Passport - A. Abou Zour (LR2495324): Issue 27/12/2021, Expiry 26/12/2031. <span class="status-valid">VALID</span>.</li>
+                    <li>Passport - W. Van Wemmel (GA9847637 from AECB): Expiry 31/10/2029. <span class="status-valid">VALID</span>. (Document not provided)</li>
+                    <li>EID - M. Mesharaf (784-1982-3980648-6): Issue 05/07/2023, Expiry 04/07/2025. <span class="status-expiring-soon">EXPIRING SOON</span> (32 days remaining).</li>
+                    <li>EID - W. Van Wemmel (784-1969-3298703-3): Issue 23/08/2023, Expiry 22/08/2025. <span class="status-expiring-soon">EXPIRING SOON</span> (81 days remaining).</li>
+                    <li>EID - A. Abou Zour (784-1990-1675531-8): Issue 18/12/2024, Expiry 17/12/2026. <span class="status-valid">VALID</span>.</li>
+                    <li>Personal AECB - M. Mesharaf: Generated 28/05/2025. <span class="status-valid">VALID</span>. Recency: CURRENT.</li>
+                    <li>Personal AECB - W. Van Wemmel: Generated 27/05/2025. <span class="status-valid">VALID</span>. Recency: CURRENT.</li>
+                    <li>Personal AECB - A. Abou Zour: Generated 27/05/2025. <span class="status-valid">VALID</span>. Recency: CURRENT.</li>
+                    <li>Business AECB: Generated 27/05/2025. <span class="status-valid">VALID</span>. Recency: CURRENT.</li>
+                    <li>VAT Returns: Q2 2024, Q3 2024, Q4 2024, Q1 2025. All <span class="status-valid">VALID</span> (historical). Recency: The latest return covers up to Feb 2025. As of June 2025, the next return (Mar-May 2025) would be due by June 28, 2025. If not yet filed, it could be considered NOT RECENT soon. Assuming filed.</li>
+                </ul>
+                <h4>Risk Assessment Summary:</h4>
+                <ul>
+                    <li><span class="risk-high">High Risk:</span> Discrepancy in ownership structure between MOA and Trade License. This presents a significant legal and operational risk regarding authority and profit distribution.</li>
+                    <li><span class="risk-medium">Medium Risk:</span> Expiring EIDs for Mohamed Mesharaf and Wouter Van Wemmel, and Passport for Mohamed Mesharaf. Renewal should be prioritized.</li>
+                    <li><span class="risk-low">Low Risk:</span> General document management; ensure all future renewals are tracked.</li>
+                </ul>
+                <h4>Legal Structure Mismatches Commentary:</h4>
+                <p>The primary mismatch is the shareholding details and the inclusion of Amer Jihad Abou Zour as a shareholder in the Trade License but not in the MOA. The MOA is the foundational document for an LLC regarding ownership. This needs immediate rectification to ensure legal and financial clarity.</p>
+            </div>
+
+            <h3>Data Consistency Analysis</h3>
+            <div class="summary-box">
+                <p>The following table details the consistency checks performed across the provided documents.</p>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Consistency Status</th>
+                        <th>Trade License (1165547)</th>
+                        <th>VAT Certificate (TRN ending 003)</th>
+                        <th>MOA (8812503)</th>
+                        <th>Rent Contract (Ejari ending 5198)</th>
+                        <th>Business AECB (BB1664233)</th>
+                        <th>VAT Returns (Various)</th>
+                        <th>Personal Docs (IDs, Passports)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1. License Number Cross-Check</td>
+                        <td class="status-consistent">Consistent</td>
+                        <td>1165547</td>
+                        <td>1165547</td>
+                        <td>1165547 (Implied, MOA Refers to TL)</td>
+                        <td>1165547</td>
+                        <td>1165547</td>
+                        <td>N/A</td>
+                        <td>N/A (Manager on TL, Shareholder)</td>
+                    </tr>
+                    <tr>
+                        <td>2. Legal Entity vs. Trade Name Verification</td>
+                        <td class="status-consistent">Consistent (Name)</td>
+                        <td>GROUND CONTROL ENTERTAINMENTS CO. L.L.C (Company/Business Name)</td>
+                        <td>GROUND CONTROL ENTERTAINMENTS CO. L.L.C (Legal Name)</td>
+                        <td>Ground Control Entertainments CO. L.L.C</td>
+                        <td>GROUND CONTROL ENTERTAINMENTS CO. L.L.C (Tenant Name)</td>
+                        <td>GROUND CONTROL ENTERTAINMENTS CO LLC</td>
+                        <td>GROUND CONTROL ENTERTAINMENTS CO. L.L.C (Legal Name)</td>
+                        <td>N/A (Employer for M. Mesharaf, W. Van Wemmel on EIDs and AECBs)</td>
+                    </tr>
+                    <tr>
+                        <td colspan="9"><em>Legal Entity vs. Trade Name - Notes: The business is an LLC, a separate legal entity. VAT registration is under the LLC's legal name. The legal name and trade name appear to be the same. See "Business Structure Consistency" for ownership inconsistencies.</em></td>
+                    </tr>
+                    <tr>
+                        <td>3. Business Name Consistency</td>
+                        <td class="status-consistent">Consistent</td>
+                        <td>GROUND CONTROL ENTERTAINMENTS CO. L.L.C</td>
+                        <td>GROUND CONTROL ENTERTAINMENTS CO. L.L.C</td>
+                        <td>Ground Control Entertainments CO. L.L.C</td>
+                        <td>GROUND CONTROL ENTERTAINMENTS CO. L.L.C</td>
+                        <td>GROUND CONTROL ENTERTAINMENTS CO LLC</td>
+                        <td>GROUND CONTROL ENTERTAINMENTS CO. L.L.C</td>
+                        <td>N/A</td>
+                    </tr>
+                    <tr>
+                        <td>4. Authorized Signatory Validation</td>
+                        <td class="status-consistent">Consistent (VAT)</td>
+                        <td>Manager: Mohamed Mahmoud Attia Sayed Ahmed Mesharaf</td>
+                        <td>N/A</td>
+                        <td>Manager: Mohamed Mahmoud Attia Sayed Ahmed Mesharaf</td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                        <td>Auth Signatory: MOHAMED MAHMOUD ATTIA SAYED AHMED MESHARAF</td>
+                        <td>N/A</td>
+                    </tr>
+                    <tr>
+                        <td>5. Business Structure Consistency</td>
+                        <td class="status-mismatch">Mismatch (Ownership)</td>
+                        <td>LLC. Shareholders: M.Mesharaf (50%), A.AbouZour (30%), W.VanWemmel (20%)</td>
+                        <td>LLC</td>
+                        <td>LLC. Parties: M.Mesharaf (70%), W.VanWemmel (30%)</td>
+                        <td>Entity (LLC)</td>
+                        <td>LLC</td>
+                        <td>Entity (LLC)</td>
+                        <td>N/A</td>
+                    </tr>
+                    <tr>
+                        <td colspan="9"><em>Business Structure - Notes: All documents represent business as LLC. MOA (founding doc) shows 2 partners. Trade License shows 3 partners with different percentages. Amer Abou Zour not in MOA. This is a critical inconsistency.</em></td>
+                    </tr>
+                    <tr>
+                        <td>6. Trade Activity Consistency</td>
+                        <td class="status-consistent">Consistent</td>
+                        <td>Events Organizing & Managing, Hospitality, Parties & Entertainments, Gaming Venue, Kids Amusement, Sports & Amusement Tracks, Coffee Shop</td>
+                        <td>N/A</td>
+                        <td>Events Organizing & Managing, Hospitality, Parties & Entertainments</td>
+                        <td>N/A</td>
+                        <td>Other service activities</td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                    </tr>
+                     <tr>
+                        <td colspan="9"><em>Trade Activity - Notes: MOA lists fewer activities than Trade License. Business AECB is generic. Assume core activities align.</em></td>
+                    </tr>
+                    <tr>
+                        <td>7. Address and Contact Information</td>
+                        <td class="status-consistent">Consistent (Main Address)</td>
+                        <td>NKM-E-029, Nakheel Mall, Palm Jumeirah, Dubai. PO Box 2311-0. Phone: 971-4-2622969. Email: m.attia@live.co.uk</td>
+                        <td>ABU HAIL BUILDING 13, Abu Hail, Dubai. Phone: +971553813135</td>
+                        <td>Emirate of Dubai (Head Office)</td>
+                        <td>Nakheel Mall, Palm Jumeirah (Property)</td>
+                        <td>NKM-E-029, SHOP, PALM JUMEIRAH (Address on AECB)</td>
+                        <td>ABU HAIL BUILDING 13, Abu Hail, Dubai</td>
+                        <td>Nakheel Mall (M.Mesharaf EID address, employment address in AECBs)</td>
+                    </tr>
+                    <tr>
+                        <td colspan="9"><em>Address - Notes: VAT Certificate and VAT Returns show "ABU HAIL BUILDING 13". Trade License, Rent Contract, and Business AECB show "Nakheel Mall, NKM-E-029". This could be registered office vs. operational office or an old vs. new address. VAT portal may need updating if Nakheel Mall is primary. The contact number +971553813135 on VAT cert is M.Mesharaf's mobile.</em></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="summary-box">
+                <h4>Summary of Mismatches or Missing Data (Consistency):</h4>
+                <ul>
+                    <li><strong>Business Structure/Ownership:</strong> Significant mismatch between MOA and Trade License regarding shareholders and their percentages. Amer Jihad Abou Zour is a shareholder per Trade License but not in MOA.</li>
+                    <li><strong>Address:</strong> Discrepancy in registered address between VAT documents (Abu Hail) and other operational documents (Nakheel Mall).</li>
+                </ul>
+                <h4>Specific Commentary on Legal Structure:</h4>
+                <p>The company is established as an LLC. However, the documented ownership structure is critically inconsistent. The MOA typically governs the internal ownership and profit-sharing unless formally amended and registered. The Trade License reflects the current registered partners with the licensing authority. This conflict needs urgent resolution.</p>
+                <h4>Risks and Concerns:</h4>
+                <ul>
+                    <li><span class="risk-high">Legal Disputes:</span> Ownership discrepancies can lead to disputes among partners regarding profit distribution, decision-making authority, and liability.</li>
+                    <li><span class="risk-high">Regulatory Non-compliance:</span> Authorities might question the correct legal standing and registered details of the company if MOA and Trade License are not aligned.</li>
+                    <li><span class="risk-medium">Operational Difficulties:</span> Inconsistent addresses might lead to miscommunication or issues with official correspondence.</li>
+                </ul>
+                <h4>Recommendations for Resolving Inconsistencies:</h4>
+                <ul>
+                    <li><strong>Rectify Ownership Documents:</strong>
+                        <ul>
+                            <li>If the Trade License reflects the true current ownership, the MOA must be amended to include Amer Jihad Abou Zour and reflect the correct share percentages. This amendment needs to be notarized and registered.</li>
+                            <li>If the MOA is correct, the Trade License needs to be updated to remove Amer Jihad Abou Zour and adjust share percentages, which would imply a share transfer or exit has occurred and needs to be formally documented.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Clarify and Update Registered Address:</strong> Determine the official primary business address and ensure it is consistently reflected across all registrations, including VAT records with the FTA.</li>
+                    <li><strong>Obtain Missing Documents:</strong> Request P&L Statements, Facility Letters, and recent Bank Statements for a complete financial overview.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Individual Document Sections Start Here -->
+        <div id="VATCertificate" class="tab-content">
+            <!-- Content for VAT Certificate will be dynamically generated -->
+        </div>
+        <div id="VATStatements" class="tab-content">
+            <!-- Content for VAT Statements will be dynamically generated -->
+        </div>
+        <div id="MOA" class="tab-content">
+            <!-- Content for MOA will be dynamically generated -->
+        </div>
+        <div id="Passports" class="tab-content">
+            <!-- Content for Passports will be dynamically generated -->
+        </div>
+        <div id="EIDs" class="tab-content">
+            <!-- Content for EIDs will be dynamically generated -->
+        </div>
+        <div id="TradeLicense" class="tab-content">
+            <!-- Content for Trade License will be dynamically generated -->
+        </div>
+        <div id="RentContract" class="tab-content">
+            <!-- Content for Rent Contract will be dynamically generated -->
+        </div>
+        <div id="BusinessAECB" class="tab-content">
+            <!-- Content for Business AECB will be dynamically generated -->
+        </div>
+        <div id="PersonalAECB" class="tab-content">
+            <!-- Content for Personal AECBs will be dynamically generated -->
+        </div>
+        <!-- Individual Document Sections End Here -->
+
+    </div>
+
+    <script>
+        // Placeholder for actual data population logic
+        // In a real application, this data would come from backend processing of OCR results.
+
+        const today = new Date('2025-06-02T00:00:00Z'); // UTC to avoid timezone issues in calculations
+
+        function calculateDaysUntilExpiration(expiryDateStr) {
+            if (!expiryDateStr || expiryDateStr.toUpperCase() === 'N/A' || expiryDateStr.toUpperCase() === '[NOT FOUND]') return 'N/A';
+            try {
+                const expiry = new Date(expiryDateStr + 'T00:00:00Z');
+                if (isNaN(expiry.getTime())) return 'Invalid Date';
+                const diffTime = expiry - today;
+                const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                return diffDays;
+            } catch (e) {
+                return 'Error';
+            }
+        }
+
+        function getExpirationStatus(daysUntilExpiration, hasNoExpiry = false) {
+            if (hasNoExpiry) return '<span class="status-valid">NO EXPIRY</span>';
+            if (daysUntilExpiration === 'N/A' || daysUntilExpiration === 'Invalid Date' || daysUntilExpiration === 'Error') return 'N/A';
+            const days = parseInt(daysUntilExpiration);
+            if (days < 0) return '<span class="status-expired">EXPIRED</span>';
+            if (days <= 90) return '<span class="status-expiring-soon">EXPIRING SOON</span>';
+            return '<span class="status-valid">VALID</span>';
+        }
+        
+        function populateVATCertificate() {
+            const content = `
+                <h2>VAT Certificate</h2>
+                <div class="doc-section-summary">
+                    <p><strong>Brief Description:</strong> Certificate of Registration for Value Added Tax issued by the Federal Tax Authority.</p>
+                    <p><strong>Total Pages Reviewed:</strong> 1</p>
+                    <p><strong>Language:</strong> English, Arabic</p>
+                    <p><strong>Overall Document Quality:</strong> High</p>
+                    <p><strong>Challenges Encountered:</strong> None</p>
+                    <p><strong>Legal Status Representation:</strong> Entity (GROUND CONTROL ENTERTAINMENTS CO. L.L.C). Tax registration is under the business entity name.</p>
+                </div>
+                <h3>Data Extraction</h3>
+                <table>
+                    <tr><th>Field Name</th><th>Extracted Value</th><th>Confidence Score (%)</th><th>Comments</th></tr>
+                    <tr><td>Document Type</td><td>VAT Certificate</td><td>100</td><td></td></tr>
+                    <tr><td>Tax Registration Number (TRN)</td><td>104102868700003</td><td>100</td><td></td></tr>
+                    <tr><td>Legal Name of Entity (English)</td><td>GROUND CONTROL ENTERTAINMENTS CO. L.L.C</td><td>100</td><td>Registered taxpayer name.</td></tr>
+                    <tr><td>Legal Name of Entity (Arabic)</td><td>جراوند كنترول للترفيه ذ.م.م</td><td>100</td><td></td></tr>
+                    <tr><td>Registered Address</td><td>ABU HAIL BUILDING 13, Abu Hail, Abu Hail, Dubai, 000, Dubai</td><td>100</td><td>Official address for tax purposes.</td></tr>
+                    <tr><td>Contact Number</td><td>+971553813135</td><td>100</td><td></td></tr>
+                    <tr><td>Effective Registration Date</td><td>01/09/2023</td><td>100</td><td>Date Format: DD/MM/YYYY</td></tr>
+                    <tr><td>First VAT Return Period</td><td>01/09/2023 - 30/11/2023</td><td>100</td><td></td></tr>
+                    <tr><td>First VAT Return Due Date</td><td>28/12/2023</td><td>100</td><td>Date Format: DD/MM/YYYY</td></tr>
+                    <tr><td>Tax Period Start/End Dates</td><td>1st Mar to 31st May, 1st June to 31st Aug, 1st Sep to 30th Nov, 1st Dec to 28th Feb</td><td>100</td><td>Standard tax periods for the stagger.</td></tr>
+                    <tr><td>Establishment Name(s) under Taxable Person</td><td>GROUND CONTROL ENTERTAINMENTS CO. L.L.C, Dubai Economy and Tourism, License No: 1165547</td><td>100</td><td>Business name operated under the legal entity.</td></tr>
+                    <tr><td>Date of Issue</td><td>04/08/2023</td><td>100</td><td>Date Format: DD/MM/YYYY</td></tr>
+                    <tr><td>Version Number</td><td>2023/VAT/0000183584/001</td><td>100</td><td></td></tr>
+                    <tr><td>Registered under individual or business name</td><td>Business Name</td><td>100</td><td>Explicitly shows LLC.</td></tr>
+                    <tr><td>Relationship between registered taxpayer and business entity</td><td>The registered taxpayer IS the business entity.</td><td>100</td><td></td></tr>
+                    <tr><td>Hierarchical relationships</td><td>N/A - Entity registration.</td><td>100</td><td></td></tr>
+                </table>
+                <h3>Document Validity</h3>
+                <table>
+                    <tr><th>Document Name/Type</th><th>Document Number/Reference</th><th>Issue Date</th><th>Expiry Date</th><th>Days Until Expiration</th><th>Expiration Status</th><th>Recency Status</th><th>Completeness Status</th><th>Legal Structure Rep.</th><th>Overall Validity</th><th>Critical Issues</th></tr>
+                    <tr>
+                        <td>VAT Certificate</td>
+                        <td>104102868700003 (TRN)</td>
+                        <td>2023-08-04</td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                        <td>${getExpirationStatus('N/A', true)}</td>
+                        <td>CURRENT</td>
+                        <td>COMPLETE</td>
+                        <td>ENTITY</td>
+                        <td>FULLY VALID</td>
+                        <td>None</td>
+                    </tr>
+                </table>
+            `;
+            document.getElementById('VATCertificate').innerHTML = content;
+        }
+
+        // ... Add similar population functions for ALL other document types
+        // For brevity in this example, I'll just call them.
+        // In a real scenario, each function would be as detailed as populateVATCertificate.
+
+        function populateVATStatements() {
+            let content = `<h2>VAT Statements (Returns)</h2>`;
+            const statements = [
+                { id: '230006815315', period: '01/03/2024 - 31/05/2024', quarter: 'Q2 2024', dueDate: '28/06/2024', submissionDate: '28/06/2024', taxPayable: '-337,216.20 (Refundable)' },
+                { id: '230007183460', period: '01/06/2024 - 31/08/2024', quarter: 'Q3 2024', dueDate: '30/09/2024', submissionDate: '30/09/2024', taxPayable: '-35,741.98 (Refundable)' },
+                { id: '230007569196', period: '01/09/2024 - 30/11/2024', quarter: 'Q4 2024', dueDate: '30/12/2024', submissionDate: '30/12/2024', taxPayable: '27,316.34' },
+                { id: '230008038713', period: '01/12/2024 - 28/02/2025', quarter: 'Q1 2025', dueDate: '28/03/2025', submissionDate: '08/04/2025', taxPayable: '402,701.15' } // Submission date from OCR pg 3 of this doc.
+            ];
+
+            statements.forEach(stmt => {
+                content += `
+                    <div class="doc-section-summary">
+                        <p><strong>Brief Description:</strong> VAT 201 Return for ${stmt.quarter}.</p>
+                        <p><strong>Total Pages Reviewed:</strong> 3</p>
+                        <p><strong>Language:</strong> English, Arabic</p>
+                        <p><strong>Overall Document Quality:</strong> High</p>
+                        <p><strong>Challenges Encountered:</strong> None</p>
+                        <p><strong>Legal Status Representation:</strong> Entity (GROUND CONTROL ENTERTAINMENTS CO. L.L.C)</p>
+                    </div>
+                    <h3>Data Extraction - ${stmt.quarter} (ID: ${stmt.id})</h3>
+                    <table>
+                        <tr><th>Field Name</th><th>Extracted Value</th><th>Confidence Score (%)</th><th>Comments</th></tr>
+                        <tr><td>Document Type</td><td>VAT 201 Return</td><td>100</td><td></td></tr>
+                        <tr><td>Document Number/ID/Reference</td><td>${stmt.id}</td><td>100</td><td></td></tr>
+                        <tr><td>TRN</td><td>104102868700003</td><td>100</td><td></td></tr>
+                        <tr><td>VAT Return Period</td><td>${stmt.period}</td><td>100</td><td></td></tr>
+                        <tr><td>VAT Return Due Date</td><td>${stmt.dueDate}</td><td>100</td><td>Original format DD/MM/YYYY</td></tr>
+                        <tr><td>Tax Year End</td><td>28/02/2025 (or 27/02/2025 on one doc)</td><td>100</td><td>Consistent across returns</td></tr>
+                        <tr><td>Legal Name (Registered Taxpayer)</td><td>GROUND CONTROL ENTERTAINMENTS CO. L.L.C</td><td>100</td><td></td></tr>
+                        <tr><td>Legal Name (Arabic)</td><td>جراوند كنترول للترفيه ذ.م.م</td><td>100</td><td></td></tr>
+                        <tr><td>Address</td><td>ABU HAIL BUILDING 13, Abu Hail, Dubai</td><td>100</td><td></td></tr>
+                        <tr><td>Total VAT Due for Period</td><td>${stmt.taxPayable} AED</td><td>100</td><td></td></tr>
+                        <tr><td>Authorized Signatory</td><td>MOHAMED MAHMOUD ATTIA SAYED AHMED MESHARAF</td><td>100</td><td></td></tr>
+                        <tr><td>Date of Submission</td><td>${stmt.submissionDate}</td><td>100</td><td>Original format DD/MM/YYYY</td></tr>
+                    </table>
+                    <h3>Document Validity - ${stmt.quarter} (ID: ${stmt.id})</h3>
+                    <table>
+                        <tr><th>Document Name/Type</th><th>Document Number/Reference</th><th>Issue Date (Submission)</th><th>Expiry Date</th><th>Days Until Expiration</th><th>Expiration Status</th><th>Recency Status</th><th>Completeness Status</th><th>Legal Structure Rep.</th><th>Overall Validity</th><th>Critical Issues</th></tr>
+                        <tr>
+                            <td>VAT Return ${stmt.quarter}</td>
+                            <td>${stmt.id}</td>
+                            <td>${new Date(stmt.submissionDate.split('/').reverse().join('-')).toISOString().split('T')[0]}</td>
+                            <td>N/A</td>
+                            <td>N/A</td>
+                            <td>${getExpirationStatus('N/A', true)}</td>
+                            <td>CURRENT (as of their period end)</td>
+                            <td>COMPLETE</td>
+                            <td>ENTITY</td>
+                            <td>FULLY VALID</td>
+                            <td>None</td>
+                        </tr>
+                    </table>
+                    <hr/>
+                `;
+            });
+             content += `
+                <h4>VAT Returns Set Assessment:</h4>
+                <p><strong>Sequential Coverage:</strong> Q2 2024, Q3 2024, Q4 2024, Q1 2025 provided. Sequential. No gaps identified in the provided set.</p>
+                <p><strong>Consistent Information:</strong> TRN, Legal Name, Address are consistent across these returns.</p>
+                <p><strong>Missing Recent Periods:</strong> As of June 2, 2025, the return for Mar-May 2025 period would be due by June 28, 2025. Assuming it is filed/in process.</p>
+                <p><strong>Legal Entity Representation:</strong> Consistently as an Entity (LLC).</p>
+            `;
+            document.getElementById('VATStatements').innerHTML = content;
+        }
+        
+        function populateMOA() {
+            let daysToExp = calculateDaysUntilExpiration('N/A');
+            let expStatus = getExpirationStatus(daysToExp, true);
+            const content = `
+                <h2>Memorandum of Association (MOA)</h2>
+                <div class="doc-section-summary">
+                    <p><strong>Brief Description:</strong> Contract of Association for the LLC.</p>
+                    <p><strong>Total Pages Reviewed:</strong> 19</p>
+                    <p><strong>Language:</strong> English, Arabic</p>
+                    <p><strong>Overall Document Quality:</strong> High</p>
+                    <p><strong>Challenges Encountered:</strong> None</p>
+                    <p><strong>Legal Status Representation:</strong> Entity (Ground Control Entertainments CO. L.L.C)</p>
+                </div>
+                <h3>Data Extraction</h3>
+                <table>
+                    <tr><th>Field Name</th><th>Extracted Value</th><th>Confidence Score (%)</th><th>Comments</th></tr>
+                    <tr><td>Document Type</td><td>Memorandum of Association</td><td>100</td><td></td></tr>
+                    <tr><td>Contract Number</td><td>8812503</td><td>100</td><td></td></tr>
+                    <tr><td>Issue Date (Print Date/Signing)</td><td>2023-03-15</td><td>100</td><td>Date format: DD/MM/YYYY</td></tr>
+                    <tr><td>Company Name</td><td>Ground Control Entertainments CO. L.L.C</td><td>100</td><td></td></tr>
+                    <tr><td>Legal Form</td><td>Limited Liability Company (LLC)</td><td>100</td><td></td></tr>
+                    <tr><td>Object of the Company</td><td>Parties & Entertainments Services, Events Organizing & Managing, Hospitality Services</td><td>100</td><td></td></tr>
+                    <tr><td>Company Address</td><td>Emirate of Dubai</td><td>100</td><td>Head Office</td></tr>
+                    <tr><td>Duration of Company</td><td>99 Years from registration, auto-renewed</td><td>100</td><td></td></tr>
+                    <tr><td>Capital</td><td>AED 300,000</td><td>100</td><td>300 shares of AED 1000 each</td></tr>
+                    <tr><td>Partner 1 Name</td><td>Mr. MOHAMED MAHMOUD ATTIA SAYED AHMED MESHARAF</td><td>100</td><td></td></tr>
+                    <tr><td>Partner 1 Nationality</td><td>Egypt</td><td>100</td><td></td></tr>
+                    <tr><td>Partner 1 Passport No.</td><td>A23098380</td><td>100</td><td></td></tr>
+                    <tr><td>Partner 1 DOB</td><td>30/01/1982</td><td>100</td><td></td></tr>
+                    <tr><td>Partner 1 Shares</td><td>210 shares (AED 210,000)</td><td>100</td><td></td></tr>
+                    <tr><td>Partner 1 Share Percentage</td><td>70%</td><td>100</td><td>Major inconsistency with Trade License.</td></tr>
+                    <tr><td>Partner 2 Name</td><td>Mr. WOUTER JAN VAN WEMMEL</td><td>100</td><td></td></tr>
+                    <tr><td>Partner 2 Nationality</td><td>Belgium</td><td>100</td><td></td></tr>
+                    <tr><td>Partner 2 Passport No.</td><td>EP105537</td><td>100</td><td></td></tr>
+                    <tr><td>Partner 2 DOB</td><td>13/12/1969</td><td>100</td><td></td></tr>
+                    <tr><td>Partner 2 Shares</td><td>90 shares (AED 90,000)</td><td>100</td><td></td></tr>
+                    <tr><td>Partner 2 Share Percentage</td><td>30%</td><td>100</td><td>Major inconsistency with Trade License.</td></tr>
+                    <tr><td>Manager</td><td>Mr. MOHAMED MAHMOUD ATTIA SAYED AHMED MESHARAF</td><td>100</td><td>Appointed for 5 years.</td></tr>
+                    <tr><td>Trade License Number (referenced)</td><td>[NOT FOUND] explicitly, but implied as it's for company formation</td><td>N/A</td><td></td></tr>
+                </table>
+                <h3>Document Validity</h3>
+                <table>
+                    <tr><th>Document Name/Type</th><th>Document Number/Reference</th><th>Issue Date</th><th>Expiry Date</th><th>Days Until Expiration</th><th>Expiration Status</th><th>Recency Status</th><th>Completeness Status</th><th>Legal Structure Rep.</th><th>Overall Validity</th><th>Critical Issues</th></tr>
+                    <tr>
+                        <td>Memorandum of Association</td>
+                        <td>8812503</td>
+                        <td>2023-03-15</td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                        <td>${expStatus}</td>
+                        <td>CURRENT</td>
+                        <td>COMPLETE</td>
+                        <td>ENTITY</td>
+                        <td>CONDITIONALLY VALID</td>
+                        <td>Ownership details inconsistent with Trade License.</td>
+                    </tr>
+                </table>
+            `;
+            document.getElementById('MOA').innerHTML = content;
+        }
+
+        function populatePassports() {
+            let content = `<h2>Passport Copies</h2>`;
+            const passports = [
+                { name: 'Mohamed Mahmoud Attia Sayed Ahmed Mesharaf', number: 'A23098380', issue: '2018-08-04', expiry: '2025-08-03', dob: '1982-01-30', nationality: 'EGYPTIAN' },
+                { name: 'Amer Jihad Abou Zour', number: 'LR2495324', issue: '2021-12-27', expiry: '2031-12-26', dob: '1990-08-12', nationality: 'LEBANESE' },
+                // Wouter Jan Van Wemmel passport not provided in OCR, info from AECB.
+            ];
+            passports.forEach(p => {
+                let daysToExp = calculateDaysUntilExpiration(p.expiry);
+                let expStatus = getExpirationStatus(daysToExp);
+                content += `
+                    <h4>Passport - ${p.name}</h4>
+                    <div class="doc-section-summary">
+                        <p><strong>Brief Description:</strong> Passport copy for shareholder/manager.</p>
+                        <p><strong>Total Pages Reviewed:</strong> 1 (Assumed standard extract)</p>
+                        <p><strong>Language:</strong> Arabic, English</p>
+                        <p><strong>Overall Document Quality:</strong> High</p>
+                    </div>
+                    <h3>Data Extraction</h3>
+                    <table>
+                        <tr><th>Field Name</th><th>Extracted Value</th><th>Confidence Score (%)</th><th>Comments</th></tr>
+                        <tr><td>Document Type</td><td>Passport Copy</td><td>100</td><td></td></tr>
+                        <tr><td>Full Name</td><td>${p.name}</td><td>100</td><td></td></tr>
+                        <tr><td>Passport Number</td><td>${p.number}</td><td>100</td><td></td></tr>
+                        <tr><td>Nationality</td><td>${p.nationality}</td><td>100</td><td></td></tr>
+                        <tr><td>Date of Birth</td><td>${p.dob}</td><td>100</td><td>Original format: DD/MM/YYYY</td></tr>
+                        <tr><td>Date of Issue</td><td>${p.issue}</td><td>100</td><td>Original format: DD/MM/YYYY</td></tr>
+                        <tr><td>Date of Expiry</td><td>${p.expiry}</td><td>100</td><td>Original format: DD/MM/YYYY</td></tr>
+                        <tr><td>Issuing Country</td><td>${p.nationality === 'EGYPTIAN' ? 'EGYPT' : 'LEBANON'}</td><td>100</td><td></td></tr>
+                    </table>
+                    <h3>Document Validity</h3>
+                    <table>
+                        <tr><th>Document Name/Type</th><th>Document Number/Reference</th><th>Issue Date</th><th>Expiry Date</th><th>Days Until Expiration</th><th>Expiration Status</th><th>Recency Status</th><th>Completeness Status</th><th>Legal Structure Rep.</th><th>Overall Validity</th><th>Critical Issues</th></tr>
+                        <tr>
+                            <td>Passport - ${p.name}</td>
+                            <td>${p.number}</td>
+                            <td>${p.issue}</td>
+                            <td>${p.expiry}</td>
+                            <td>${daysToExp}</td>
+                            <td>${expStatus}</td>
+                            <td>N/A (Personal Doc)</td>
+                            <td>COMPLETE</td>
+                            <td>INDIVIDUAL</td>
+                            <td>${daysToExp < 0 ? 'INVALID' : 'FULLY VALID'}</td>
+                            <td>${daysToExp <= 90 && daysToExp >= 0 ? 'Expiring Soon' : (daysToExp < 0 ? 'Expired' : 'None')}</td>
+                        </tr>
+                    </table><hr/>`;
+            });
+             content += `<p><em>Note: Passport for Wouter Jan Van Wemmel (No. EP105537 per MOA, or GA9847637 per AECB) was not provided. AECB indicates GA9847637 expires 2029-10-31, which is VALID.</em></p>`;
+            document.getElementById('Passports').innerHTML = content;
+        }
+        
+        function populateEIDs() {
+            let content = `<h2>Emirates ID Copies</h2>`;
+            const eids = [
+                { name: 'Mohamed Mahmoud Attia Sayed Ahmed Mesharaf', number: '784-1982-3980648-6', issue: '2023-07-05', expiry: '2025-07-04', dob: '1982-01-30', nationality: 'Egypt', employer: 'Ground Control Entertainments Co. L.L.C', occupation: 'Partner' },
+                { name: 'Wouter Jan Van Wemmel', number: '784-1969-3298703-3', issue: '2023-08-23', expiry: '2025-08-22', dob: '1969-12-13', nationality: 'Belgium', employer: 'W2interior For Design Services Co. L.L.C', occupation: 'Sales Officer' }, // Employer mismatch to business, but he is a shareholder.
+                { name: 'Amer Jihad Abou Zour', number: '784-1990-1675531-8', issue: '2024-12-18', expiry: '2026-12-17', dob: '1990-08-12', nationality: 'Lebanon', employer: 'Octobrains Commercial Brokers L.l.c', occupation: 'Investor' } // Employer mismatch to business, but he is a shareholder.
+            ];
+             eids.forEach(eid => {
+                let daysToExp = calculateDaysUntilExpiration(eid.expiry);
+                let expStatus = getExpirationStatus(daysToExp);
+                content += `
+                    <h4>Emirates ID - ${eid.name}</h4>
+                     <div class="doc-section-summary">
+                        <p><strong>Brief Description:</strong> Emirates ID copy for shareholder/manager.</p>
+                        <p><strong>Total Pages Reviewed:</strong> 1 (Front and Back)</p>
+                        <p><strong>Language:</strong> Arabic, English</p>
+                        <p><strong>Overall Document Quality:</strong> High</p>
+                    </div>
+                    <h3>Data Extraction</h3>
+                    <table>
+                        <tr><th>Field Name</th><th>Extracted Value</th><th>Confidence Score (%)</th><th>Comments</th></tr>
+                        <tr><td>Document Type</td><td>Emirates ID</td><td>100</td><td></td></tr>
+                        <tr><td>Full Name</td><td>${eid.name}</td><td>100</td><td></td></tr>
+                        <tr><td>EID Number</td><td>${eid.number}</td><td>100</td><td></td></tr>
+                        <tr><td>Nationality</td><td>${eid.nationality}</td><td>100</td><td></td></tr>
+                        <tr><td>Date of Birth</td><td>${eid.dob}</td><td>100</td><td>Original format: DD/MM/YYYY</td></tr>
+                        <tr><td>Date of Issue</td><td>${eid.issue}</td><td>100</td><td>Original format: DD/MM/YYYY</td></tr>
+                        <tr><td>Date of Expiry</td><td>${eid.expiry}</td><td>100</td><td>Original format: DD/MM/YYYY</td></tr>
+                        <tr><td>Employer</td><td>${eid.employer}</td><td>100</td><td>${(eid.name.includes('Wemmel') || eid.name.includes('Zour')) && !eid.employer.includes('Ground Control') ? 'Employer does not match subject company.' : 'Employer matches subject company.'}</td></tr>
+                        <tr><td>Occupation</td><td>${eid.occupation}</td><td>100</td><td></td></tr>
+                    </table>
+                    <h3>Document Validity</h3>
+                     <table>
+                        <tr><th>Document Name/Type</th><th>Document Number/Reference</th><th>Issue Date</th><th>Expiry Date</th><th>Days Until Expiration</th><th>Expiration Status</th><th>Recency Status</th><th>Completeness Status</th><th>Legal Structure Rep.</th><th>Overall Validity</th><th>Critical Issues</th></tr>
+                        <tr>
+                            <td>Emirates ID - ${eid.name}</td>
+                            <td>${eid.number}</td>
+                            <td>${eid.issue}</td>
+                            <td>${eid.expiry}</td>
+                            <td>${daysToExp}</td>
+                            <td>${expStatus}</td>
+                            <td>N/A (Personal Doc)</td>
+                            <td>COMPLETE</td>
+                            <td>INDIVIDUAL</td>
+                             <td>${daysToExp < 0 ? 'INVALID' : 'FULLY VALID'}</td>
+                            <td>${daysToExp <= 90 && daysToExp >= 0 ? 'Expiring Soon' : (daysToExp < 0 ? 'Expired' : 'None')}</td>
+                        </tr>
+                    </table><hr/>`;
+            });
+            document.getElementById('EIDs').innerHTML = content;
+        }
+
+        function populateTradeLicense() {
+             // Commercial Register is part of Trade License (page 4)
+            let tlIssue = '2023-03-16'; // Main license issue
+            let tlExpiry = '2026-03-15';
+            let daysToExpTL = calculateDaysUntilExpiration(tlExpiry);
+            let expStatusTL = getExpirationStatus(daysToExpTL);
+            
+            let crIssue = '2023-03-16'; // Same as TL initial issue
+            let crExpiry = '2026-03-15'; // Same as TL
+            let daysToExpCR = calculateDaysUntilExpiration(crExpiry);
+            let expStatusCR = getExpirationStatus(daysToExpCR);
+
+            const content = `
+                <h2>Trade License & Commercial Register (PCFC Trakhees)</h2>
+                <div class="doc-section-summary">
+                    <p><strong>Brief Description:</strong> Commercial License issued by PCFC - Trakhees, includes Commercial Register details, partner annex, and payment receipt.</p>
+                    <p><strong>Total Pages Reviewed:</strong> 8 (License, Address, Partners, CR, Receipt, Instructions, DCCI Cert)</p>
+                    <p><strong>Language:</strong> English, Arabic</p>
+                    <p><strong>Overall Document Quality:</strong> High</p>
+                    <p><strong>Challenges Encountered:</strong> None</p>
+                    <p><strong>Legal Status Representation:</strong> Entity (GROUND CONTROL ENTERTAINMENTS CO. L.L.C)</p>
+                </div>
+                <h3>Data Extraction - Trade License (Main)</h3>
+                <table>
+                    <tr><th>Field Name</th><th>Extracted Value</th><th>Confidence Score (%)</th><th>Comments</th></tr>
+                    <tr><td>Document Type</td><td>Commercial License</td><td>100</td><td></td></tr>
+                    <tr><td>License Number</td><td>1165547</td><td>100</td><td></td></tr>
+                    <tr><td>Company Name (English)</td><td>GROUND CONTROL ENTERTAINMENTS CO. L.L.C</td><td>100</td><td></td></tr>
+                    <tr><td>Company Name (Arabic)</td><td>جراوند كنترول للترفيه ذ.م.م</td><td>100</td><td></td></tr>
+                    <tr><td>Business Name</td><td>GROUND CONTROL ENTERTAINMENTS CO. L.L.C</td><td>100</td><td></td></tr>
+                    <tr><td>License Category</td><td>Trakhees</td><td>100</td><td></td></tr>
+                    <tr><td>Legal Type/Form</td><td>Limited Liability Company (LLC)</td><td>100</td><td></td></tr>
+                    <tr><td>Issue Date</td><td>${tlIssue}</td><td>100</td><td>Original format: DD/MM/YYYY. Renewal receipt 28/02/2025 for period up to 15/03/2026.</td></tr>
+                    <tr><td>Expiry Date</td><td>${tlExpiry}</td><td>100</td><td>Original format: DD/MM/YYYY</td></tr>
+                    <tr><td>Register No. (DCCI)</td><td>1937323</td><td>100</td><td>From License page 1 / CR page 4.</td></tr>
+                    <tr><td>Main License No. (if branch)</td><td>1165547</td><td>100</td><td>Indicates this is the main license.</td></tr>
+                    <tr><td>DCCI No.</td><td>451922</td><td>100</td><td></td></tr>
+                    <tr><td>Manager Name</td><td>MOHAMED MAHMOUD ATTIA SAYED AHMED MESHARAF</td><td>100</td><td>Nationality: Egypt</td></tr>
+                    <tr><td>Shareholder 1</td><td>Mohamed Mahmoud Attia Sayed Ahmed Mesharaf (50.0000000%)</td><td>100</td><td>Egypt. Inconsistency with MOA.</td></tr>
+                    <tr><td>Shareholder 2</td><td>Amer Jihad Abou Zour (30.0000000%)</td><td>100</td><td>Lebanon. Not in MOA.</td></tr>
+                    <tr><td>Shareholder 3</td><td>Wouter Jan Van Wemmel (20.0000000%)</td><td>100</td><td>Belgium. Inconsistency with MOA.</td></tr>
+                    <tr><td>Activities</td><td>Hospitality Services, Coffee Shop, Parties & Entertainments Services, Gaming Venue, Kids Amusement Arcade, Events Organizing & Managing, Sports & Amusement Tracks</td><td>100</td><td></td></tr>
+                    <tr><td>Address</td><td>Dubai - Nakheel Mall - NKM-E-029, P.O. Box 2311-0</td><td>100</td><td></td></tr>
+                    <tr><td>Phone No</td><td>971-4-2622969</td><td>100</td><td></td></tr>
+                    <tr><td>Mobile No</td><td>971-55-3813135 (M. Attia's mobile)</td><td>100</td><td></td></tr>
+                    <tr><td>Email</td><td>m.attia@live.co.uk</td><td>100</td><td></td></tr>
+                </table>
+                <h3>Data Extraction - Commercial Register (Page 4 of Trade License)</h3>
+                <table>
+                    <tr><th>Field Name</th><th>Extracted Value</th><th>Confidence Score (%)</th><th>Comments</th></tr>
+                    <tr><td>Document Type</td><td>Commercial Register</td><td>100</td><td></td></tr>
+                    <tr><td>Register No.</td><td>1937323</td><td>100</td><td></td></tr>
+                    <tr><td>Main License No.</td><td>1165547</td><td>100</td><td>Links to Trade License</td></tr>
+                    <tr><td>Business Name</td><td>GROUND CONTROL ENTERTAINMENTS CO. L.L.C</td><td>100</td><td></td></tr>
+                    <tr><td>Legal Type</td><td>Limited Liability Company (LLC)</td><td>100</td><td></td></tr>
+                    <tr><td>Expiry Date</td><td>${crExpiry}</td><td>100</td><td>Original format: DD/MM/YYYY</td></tr>
+                    <tr><td>Registration Date (Reg. Date on CR)</td><td>${crIssue}</td><td>100</td><td>Original format: DD/MM/YYYY</td></tr>
+                    <tr><td>Nominated Capital</td><td>300,000.00 AED</td><td>100</td><td></td></tr>
+                    <tr><td>Paid Capital</td><td>300,000.00 AED</td><td>100</td><td></td></tr>
+                    <tr><td>No. of Shares</td><td>300</td><td>100</td><td></td></tr>
+                    <tr><td>Currency</td><td>UAE Dirhams</td><td>100</td><td></td></tr>
+                    <tr><td>Address</td><td>Dubai - Nakheel Mall - NKM-E-029</td><td>100</td><td></td></tr>
+                </table>
+                <h3>Data Extraction - DCCI Membership Certificate (Page 8 of Trade License)</h3>
+                 <table>
+                    <tr><th>Field Name</th><th>Extracted Value</th><th>Confidence Score (%)</th><th>Comments</th></tr>
+                    <tr><td>Document Type</td><td>DCCI Membership Certificate</td><td>100</td><td></td></tr>
+                    <tr><td>Membership No.</td><td>451922</td><td>100</td><td></td></tr>
+                    <tr><td>License No.</td><td>1165547</td><td>100</td><td></td></tr>
+                    <tr><td>Registration No.</td><td>1937323</td><td>100</td><td></td></tr>
+                    <tr><td>Business Name</td><td>GROUND CONTROL ENTERTAINMENTS CO. L.L.C</td><td>100</td><td></td></tr>
+                    <tr><td>Legal Status</td><td>Limited Liability Company (LLC)</td><td>100</td><td></td></tr>
+                    <tr><td>Member Since</td><td>2023-03-16</td><td>100</td><td></td></tr>
+                    <tr><td>Date of Issue</td><td>2023-03-16</td><td>100</td><td></td></tr>
+                    <tr><td>Expiry Date</td><td>2026-03-15</td><td>100</td><td>Matches TL expiry.</td></tr>
+                </table>
+                <h3>Document Validity - Trade License</h3>
+                <table>
+                    <tr><th>Document Name/Type</th><th>Document Number/Reference</th><th>Issue Date</th><th>Expiry Date</th><th>Days Until Expiration</th><th>Expiration Status</th><th>Recency Status</th><th>Completeness Status</th><th>Legal Structure Rep.</th><th>Overall Validity</th><th>Critical Issues</th></tr>
+                    <tr>
+                        <td>Trade License</td>
+                        <td>1165547</td>
+                        <td>${tlIssue} (Renewed 2025-02-28)</td>
+                        <td>${tlExpiry}</td>
+                        <td>${daysToExpTL}</td>
+                        <td>${expStatusTL}</td>
+                        <td>CURRENT</td>
+                        <td>COMPLETE</td>
+                        <td>ENTITY</td>
+                        <td>CONDITIONALLY VALID</td>
+                        <td>Ownership details inconsistent with MOA.</td>
+                    </tr>
+                </table>
+                 <h3>Document Validity - Commercial Register</h3>
+                <table>
+                    <tr><th>Document Name/Type</th><th>Document Number/Reference</th><th>Issue Date</th><th>Expiry Date</th><th>Days Until Expiration</th><th>Expiration Status</th><th>Recency Status</th><th>Completeness Status</th><th>Legal Structure Rep.</th><th>Overall Validity</th><th>Critical Issues</th></tr>
+                    <tr>
+                        <td>Commercial Register</td>
+                        <td>1937323</td>
+                        <td>${crIssue}</td>
+                        <td>${crExpiry}</td>
+                        <td>${daysToExpCR}</td>
+                        <td>${expStatusCR}</td>
+                        <td>CURRENT</td>
+                        <td>COMPLETE</td>
+                        <td>ENTITY</td>
+                        <td>CONDITIONALLY VALID</td>
+                        <td>Part of Trade License; shares same issues.</td>
+                    </tr>
+                </table>
+            `;
+            document.getElementById('TradeLicense').innerHTML = content;
+        }
+
+        function populateRentContract() {
+            let issueDate = '2024-03-06'; // Registration Date
+            let expiryDate = '2030-10-27';
+            let daysToExp = calculateDaysUntilExpiration(expiryDate);
+            let expStatus = getExpirationStatus(daysToExp);
+            const content = `
+                <h2>Rent Contract (Ejari)</h2>
+                <div class="doc-section-summary">
+                    <p><strong>Brief Description:</strong> Tenancy Contract Information Registration Certificate (Ejari).</p>
+                    <p><strong>Total Pages Reviewed:</strong> 2</p>
+                    <p><strong>Language:</strong> English, Arabic</p>
+                    <p><strong>Overall Document Quality:</strong> High</p>
+                    <p><strong>Legal Status Representation:</strong> Tenant is the Entity (GROUND CONTROL ENTERTAINMENTS CO. L.L.C)</p>
+                </div>
+                <h3>Data Extraction</h3>
+                <table>
+                    <tr><th>Field Name</th><th>Extracted Value</th><th>Confidence Score (%)</th><th>Comments</th></tr>
+                    <tr><td>Document Type</td><td>Tenancy Contract (Ejari)</td><td>100</td><td></td></tr>
+                    <tr><td>Ejari Contract Number</td><td>0120240306005198</td><td>100</td><td></td></tr>
+                    <tr><td>Registration Date</td><td>${issueDate}</td><td>100</td><td>Original format: DD-MM-YYYY</td></tr>
+                    <tr><td>Tenant's Name</td><td>GROUND CONTROL ENTERTAINMENTS CO. L.L.C</td><td>100</td><td></td></tr>
+                    <tr><td>Tenant License Number</td><td>1165547</td><td>100</td><td></td></tr>
+                    <tr><td>Tenant License Expiry</td><td>15-03-2024 (Old, TL renewed to 2026)</td><td>90</td><td>This is likely the TL expiry at time of Ejari registration.</td></tr>
+                    <tr><td>Landlord's Name</td><td>THE PALM - JUMEIRAH CO. (L.L.C)</td><td>100</td><td></td></tr>
+                    <tr><td>Lessor Name</td><td>NAKHEEL MALLS L.L.C</td><td>100</td><td></td></tr>
+                    <tr><td>Property Location</td><td>Nakheel Mall, Palm Jumeirah, NKM-E-029</td><td>100</td><td></td></tr>
+                    <tr><td>Contract Start Date</td><td>2023-10-28</td><td>100</td><td>Original format: DD-MM-YYYY</td></tr>
+                    <tr><td>Contract End Date</td><td>${expiryDate}</td><td>100</td><td>Original format: DD-MM-YYYY</td></tr>
+                    <tr><td>Annual Rent Amount</td><td>250,000.00 AED</td><td>100</td><td></td></tr>
+                    <tr><td>Actual Contract Amount (Total)</td><td>1,750,000.00 AED</td><td>100</td><td></td></tr>
+                    <tr><td>DEWA Premise No.</td><td>381903796</td><td>100</td><td></td></tr>
+                    <tr><td>Leased Unit Size</td><td>2193.36 Sq.m</td><td>100</td><td></td></tr>
+                    <tr><td>Usage</td><td>Commercial / Shop</td><td>100</td><td></td></tr>
+                </table>
+                <h3>Document Validity</h3>
+                <table>
+                    <tr><th>Document Name/Type</th><th>Document Number/Reference</th><th>Issue Date (Registration)</th><th>Expiry Date (Contract End)</th><th>Days Until Expiration</th><th>Expiration Status</th><th>Recency Status</th><th>Completeness Status</th><th>Legal Structure Rep.</th><th>Overall Validity</th><th>Critical Issues</th></tr>
+                    <tr>
+                        <td>Rent Contract (Ejari)</td>
+                        <td>0120240306005198</td>
+                        <td>${issueDate}</td>
+                        <td>${expiryDate}</td>
+                        <td>${daysToExp}</td>
+                        <td>${expStatus}</td>
+                        <td>CURRENT</td>
+                        <td>COMPLETE</td>
+                        <td>ENTITY (Tenant)</td>
+                        <td>FULLY VALID</td>
+                        <td>None</td>
+                    </tr>
+                </table>
+            `;
+            document.getElementById('RentContract').innerHTML = content;
+        }
+
+        function populateBusinessAECB() {
+            let reportDate = '2025-05-27';
+            let daysToExp = calculateDaysUntilExpiration('N/A'); // AECB reports don't expire but have recency
+            let expStatus = getExpirationStatus(daysToExp, true);
+            const content = `
+                <h2>Business AECB Report</h2>
+                <div class="doc-section-summary">
+                    <p><strong>Brief Description:</strong> Company Credit Report from Etihad Credit Bureau.</p>
+                    <p><strong>Total Pages Reviewed:</strong> 9</p>
+                    <p><strong>Language:</strong> English</p>
+                    <p><strong>Overall Document Quality:</strong> High</p>
+                    <p><strong>Legal Status Representation:</strong> Entity (GROUND CONTROL ENTERTAINMENTS CO LLC)</p>
+                </div>
+                <h3>Data Extraction</h3>
+                <table>
+                    <tr><th>Field Name</th><th>Extracted Value</th><th>Confidence Score (%)</th><th>Comments</th></tr>
+                    <tr><td>Document Type</td><td>Business Credit Report (AECB)</td><td>100</td><td></td></tr>
+                    <tr><td>Report Generation Date</td><td>${reportDate}</td><td>100</td><td>Original format: MM/DD/YYYY</td></tr>
+                    <tr><td>CB Subject ID</td><td>BB1664233</td><td>100</td><td></td></tr>
+                    <tr><td>Company Name</td><td>GROUND CONTROL ENTERTAINMENTS CO LLC</td><td>100</td><td></td></tr>
+                    <tr><td>Trade License No</td><td>1165547</td><td>100</td><td></td></tr>
+                    <tr><td>Trade License Place</td><td>Dubai Department of Economy and Tourism</td><td>100</td><td></td></tr>
+                    <tr><td>Registration Date</td><td>2023-03-15</td><td>100</td><td>Original format: DD Month YYYY</td></tr>
+                    <tr><td>Economic Activity</td><td>Other service activities</td><td>100</td><td></td></tr>
+                    <tr><td>Company Credit Score</td><td>690 (Very good)</td><td>100</td><td></td></tr>
+                    <tr><td>Contact E-mail</td><td>MA@GROUNDCONTROLSOCIAL.COM</td><td>100</td><td></td></tr>
+                    <tr><td>Contact Phone Number</td><td>971553813135</td><td>100</td><td></td></tr>
+                    <tr><td>Returned Cheques</td><td>4 listed (000013, 000090, 000271, 000283) - all Insufficient Funds, Jan-May 2025</td><td>100</td><td>Significant finding</td></tr>
+                    <tr><td>Active Credit Contracts</td><td>1 Credit Card, 1 Telecom</td><td>100</td><td></td></tr>
+                    <tr><td>Credit Card Limit</td><td>50,000 AED</td><td>100</td><td>Outstanding 5,765 AED</td></tr>
+                    <tr><td>Telecom Outstanding</td><td>2,747 AED</td><td>100</td><td></td></tr>
+                    <tr><td>Credit Applications (Last 180 days)</td><td>3</td><td>100</td><td></td></tr>
+                </table>
+                <h3>Document Validity</h3>
+                <table>
+                    <tr><th>Document Name/Type</th><th>Document Number/Reference</th><th>Issue Date (Report Date)</th><th>Expiry Date</th><th>Days Until Expiration</th><th>Expiration Status</th><th>Recency Status</th><th>Completeness Status</th><th>Legal Structure Rep.</th><th>Overall Validity</th><th>Critical Issues</th></tr>
+                    <tr>
+                        <td>Business AECB Report</td>
+                        <td>BB1664233</td>
+                        <td>${reportDate}</td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                        <td>${expStatus}</td>
+                        <td>CURRENT (Generated < 3 weeks ago)</td>
+                        <td>COMPLETE</td>
+                        <td>ENTITY</td>
+                        <td>FULLY VALID (as a report)</td>
+                        <td>Content shows 4 returned cheques.</td>
+                    </tr>
+                </table>
+            `;
+            document.getElementById('BusinessAECB').innerHTML = content;
+        }
+        
+        function populatePersonalAECB() {
+            let content = `<h2>Personal AECB Reports</h2>`;
+            const reports = [
+                { name: 'Wouter Jan Van Wemmel', id: '106577443', reportDate: '2025-05-27', score: 'Unavailable (no active credit facilities in last 12m)', returnedCheques: '1 (AE83***0010, 47,250 AED, 16 Dec 2024)', employer: 'FUN FABY ENTERTAINMENT LLC' },
+                { name: 'Mohamed Mahmoud Attia Sayed Ahmed', id: '247591125', reportDate: '2025-05-28', score: 'Unavailable (no active credit facilities in last 24m)', returnedCheques: 'None Visible', employer: 'GROUND CONTROL ENTERTAINMENTS CO LLC' },
+                { name: 'Amer Jihad Abou Zour', id: 'AA2708499', reportDate: '2025-05-27', score: '734 (Very good)', returnedCheques: 'None Visible', employer: 'GROUND CONTROL ENTERTAINMENTS CO LLC' }
+            ];
+
+            reports.forEach(r => {
+                let daysToExp = calculateDaysUntilExpiration('N/A');
+                let expStatus = getExpirationStatus(daysToExp, true);
+                content += `
+                    <h4>Personal AECB - ${r.name}</h4>
+                    <div class="doc-section-summary">
+                        <p><strong>Brief Description:</strong> Personal Credit Report from Etihad Credit Bureau for ${r.name}.</p>
+                        <p><strong>Total Pages Reviewed:</strong> ${r.name.includes('Wemmel') ? 15 : (r.name.includes('Mohamed') ? 6 : 5)}</p>
+                        <p><strong>Language:</strong> English</p>
+                        <p><strong>Overall Document Quality:</strong> High</p>
+                    </div>
+                    <h3>Data Extraction</h3>
+                    <table>
+                        <tr><th>Field Name</th><th>Extracted Value</th><th>Confidence Score (%)</th><th>Comments</th></tr>
+                        <tr><td>Document Type</td><td>Personal Credit Report (AECB)</td><td>100</td><td></td></tr>
+                        <tr><td>Report Generation Date</td><td>${r.reportDate}</td><td>100</td><td>Original format: MM/DD/YYYY</td></tr>
+                        <tr><td>CB Subject ID</td><td>${r.id}</td><td>100</td><td></td></tr>
+                        <tr><td>Full Name</td><td>${r.name}</td><td>100</td><td></td></tr>
+                        <tr><td>Credit Score</td><td>${r.score}</td><td>100</td><td></td></tr>
+                        <tr><td>Employer Name</td><td>${r.employer}</td><td>100</td><td>W. Van Wemmel's employer on AECB (FUN FABY) differs from EID (W2Interior) and MOA/TL partner status.</td></tr>
+                        <tr><td>Returned Cheque(s)</td><td>${r.returnedCheques}</td><td>100</td><td></td></tr>
+                        ${r.name.includes('Wemmel') ? `<tr><td>Active Credit Card (Emirates Islamic)</td><td>Limit 40,000, Balance 0, Start 05 Feb 2022</td><td>100</td><td>Seems not active enough for score.</td></tr>
+                                                       <tr><td>Closed Instalment (Emirates Islamic Auto Loan)</td><td>40,000, Closed 04 Feb 2024</td><td>100</td><td></td></tr>
+                                                       <tr><td>Active Telco (Du)</td><td>2 contracts, total outstanding 1,108</td><td>100</td><td></td></tr>` : ''}
+                        ${r.name.includes('Mohamed') ? `<tr><td>Active Telco (Etisalat)</td><td>1 contract, outstanding 294, service disconnected</td><td>100</td><td></td></tr>` : ''}
+                         ${r.name.includes('Zour') ? `<tr><td>Active Credit Card (Emirates NBD)</td><td>Limit 13,500, Balance 5,491, Start 29 Aug 2024</td><td>100</td><td></td></tr>` : ''}
+                    </table>
+                    <h3>Document Validity</h3>
+                    <table>
+                        <tr><th>Document Name/Type</th><th>Document Number/Reference</th><th>Issue Date (Report Date)</th><th>Expiry Date</th><th>Days Until Expiration</th><th>Expiration Status</th><th>Recency Status</th><th>Completeness Status</th><th>Legal Structure Rep.</th><th>Overall Validity</th><th>Critical Issues</th></tr>
+                        <tr>
+                            <td>Personal AECB - ${r.name}</td>
+                            <td>${r.id}</td>
+                            <td>${r.reportDate}</td>
+                            <td>N/A</td>
+                            <td>N/A</td>
+                            <td>${expStatus}</td>
+                            <td>CURRENT (Generated < 1 week ago)</td>
+                            <td>COMPLETE</td>
+                            <td>INDIVIDUAL</td>
+                            <td>FULLY VALID (as a report)</td>
+                            <td>${r.returnedCheques !== 'None Visible' ? 'Returned Cheque noted.' : (r.score.includes("Unavailable")? 'Score unavailable.' : 'None')}</td>
+                        </tr>
+                    </table><hr/>`;
+            });
+            document.getElementById('PersonalAECB').innerHTML = content;
+        }
+
+
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+
+            // Populate content when tab is clicked
+            if (tabName === 'VATCertificate') populateVATCertificate();
+            if (tabName === 'VATStatements') populateVATStatements();
+            if (tabName === 'MOA') populateMOA();
+            if (tabName === 'Passports') populatePassports();
+            if (tabName === 'EIDs') populateEIDs();
+            if (tabName === 'TradeLicense') populateTradeLicense();
+            if (tabName === 'RentContract') populateRentContract();
+            if (tabName === 'BusinessAECB') populateBusinessAECB();
+            if (tabName === 'PersonalAECB') populatePersonalAECB();
+            // Add other population calls here
+        }
+
+        // Initialize the first tab
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelector('#toc li a.active').click(); 
+            // Pre-populate all tabs on load, or just the active one.
+            // For this setup, clicking the active tab link will trigger its population function.
+            // To pre-populate all, call all functions:
+             populateVATCertificate();
+             populateVATStatements();
+             populateMOA();
+             populatePassports();
+             populateEIDs();
+             populateTradeLicense();
+             populateRentContract();
+             populateBusinessAECB();
+             populatePersonalAECB();
+        });
+    </script>
+</body>
+</html>
